@@ -1,0 +1,35 @@
+// Fonts
+@import url('https://fonts.bunny.net/css?family=Nunito');
+
+// Variables
+@import 'variables';
+
+// Bootstrap
+@import 'bootstrap/scss/bootstrap';
+
+a {
+    text-decoration: none;
+}
+
+.card {
+    border-radius: 16px;
+    border: unset;
+    box-shadow: rgba(149, 157, 165, 0.1) 0px 4px 20px;
+}
+
+.transaksi-list {
+    position: relative;
+}
+
+.nominal-transaksi {
+    position: absolute;
+    right: 0;
+    top: auto;
+}
+
+.card-button:hover {
+    transform: scale(1.01);
+    transform-origin: center;
+    transition: .3s;
+}
+
