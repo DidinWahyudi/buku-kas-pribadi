@@ -30,3 +30,6 @@ Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('ho
 //transaksi
 Route::resource('/transaksi', TransaksiController::class);
 Route::get('/transaksi', [TransaksiController::class, 'index'])->name('transaksi');
+
+//rekap
+Route::get('/rekap', [TransaksiController::class, 'rekapTransaksi'])->name('rekap');

@@ -90,6 +90,49 @@
     </div>
     {{-- End Card Dashboard --}}
 
+    {{-- Filter Rekap --}}
+    <div class="container pt-3 pt-lg-4">
+        <div class="row">
+            <div class="col-md-12 mb-3">
+                    <div class="card">
+                        <div class="card-body">
+
+                            <form action="{{ route('rekap') }}" action="GET">
+                                <div class="row">
+                                    {{-- <div class="col-md-4">
+                                        <a class="btn btn-success" href="{{ route('transaksi.create') }}">Transaksi
+                                            Baru</a>
+                                    </div> --}}
+
+                                    <div class="col-md-5 mb-2 mb-md-0">
+                                        <div class="input-group">
+                                            <input type="date" class="form-control float-right" id="dari"
+                                                name="dari">
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-5 mb-2 mb-md-0">
+                                        <div class="input-group">
+                                            <input type="date" class="form-control float-right" id="sampai"
+                                                name="sampai">
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-2">
+                                        <button class="btn btn-primary btn-block text-light" style="width: 100%">Filter
+                                            Transaksi</button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+
+            </div>
+
+        </div>
+    </div>
+    {{-- End Filter Rekap --}}
+
 
     {{-- Transaksi Terakhir --}}
     <div class="container py-3 pt-lg-4">

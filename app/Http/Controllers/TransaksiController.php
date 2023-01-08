@@ -131,4 +131,22 @@ class TransaksiController extends Controller
         $data = $pemasukan - $pengeluaran;
         return $data;
     }
+
+    /**
+     * Remove the specified resource from storage.
+     *
+     * @param  \App\Models\Transaksi  $transaksi
+     * @return \Illuminate\Http\Response
+     */
+    public function rekapTransaksi(Request $request)
+    {
+        $dari = $request->dari;
+        $sampai = $request->sampai;
+
+        $rekapPemasukan = Transaksi::where('jenis_transaksi', '=', 'pemasukan')->where('user_id', Auth::user()->id)->whereBetween('tanggal', [$dari, $sampai])->sum('jumlah');
+        $rekapPengeluaran = Transaksi::where('jenis_transaksi', '=', 'pengeluaran')->where('user_id', Auth::user()->id)->whereBetween('tanggal', [$dari, $sampai])->sum('jumlah');
+
+        $rekap = Transaksi::whereBetween('tanggal', [$dari, $sampai])->get();
+        return view('rekap', compact('rekap', 'dari', 'sampai', 'rekapPemasukan', 'rekapPengeluaran'));
+    }
 }
