@@ -1,12 +1,13 @@
 @extends('layouts.app')
 
 @section('content')
-    <div class="container">
-        <div class="row justify-content-center">
-            <div class="col-md-8">
-                <div class="card">
-                    <div class="card-header"> Form
-                        @if (@$divisi->exists)
+<div class="container pt-3 pt-lg-4">
+    <div class="row justify-content-center">
+
+            <div class="col-md-8 mb-3">
+                <div class="section-header fw-bold fs-4">
+                    Form
+                        @if (@$transaksi->exists)
                             Update
                             @php
                                 $aksi = 'Edit';
@@ -18,8 +19,10 @@
                             @endphp
                         @endif
                         Transaksi
-                    </div>
-
+                </div>
+            </div>
+            <div class="col-md-8">
+                <div class="card p-3">
                     <div class="card-body">
                         @if (@$transaksi->exists)
                             <form id="modalForm" class="forms-sample" enctype="multipart/form-data" method="POST"
@@ -108,11 +111,10 @@
                             </div>
                         </div>
 
-
-                        <div class="form-group row">
-                            <div class="col-sm-12 ">
-                                <a href="{{ route('transaksi') }}" class="btn btn-info me-2 slide_right">
-                                    Back</a>
+                        <div class="row mb-0">
+                            <div class="col-md-6 offset-md-4">
+                                {{-- <a href="{{ route('transaksi') }}" class="btn btn-secondary me-2 slide_right">
+                                    Back</a> --}}
                                 <button type="submit" class="btn btn-primary  slide_right">
                                     {{ $aksi }}</button>
                             </div>

@@ -55,7 +55,7 @@
                         </div>
                         <div class="content-card">
                             <div class="title-card">
-                                Transaksi Keluar
+                                Totoal Pengeluaran
                             </div>
                             <div class="nominal fw-bold fs-5">
                                 @currency($jumlahPengeluaran)

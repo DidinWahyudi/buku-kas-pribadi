@@ -19,7 +19,7 @@
                   </div>
                 @endif
 
-                <div class="card">
+                <div class="card p-3">
                     <div class="card-body">
 
                         <div class="mb-2">
@@ -54,13 +54,13 @@
                                         @endif
                                         <td>
                                             <form action="{{ route('transaksi.destroy', $item->id) }}" method="Post">
-                                                <a class="btn btn-sm btn-primary me-2" title="Edit Transaksi"
-                                                    href="{{ route('transaksi.edit', $item->id) }}"><i class="bi bi-pencil-square"></i></a>
-                                                <a class="btn btn-sm btn-success me-2"
-                                                    href="{{ route('transaksi.show', $item->id) }}"><i class="bi bi-bag-check"></i>Detail</a>
+                                                <a class="btn btn-sm btn-success me-2" title="Edit Transaksi"
+                                                    href="{{ route('transaksi.edit', $item->id) }}"><i class="bi bi-pencil-square me-2"></i>Edit</a>
+                                                {{-- <a class="btn btn-sm btn-success me-2"
+                                                    href="{{ route('transaksi.show', $item->id) }}"><i class="bi bi-eye me-2"></i></i>Detail</a> --}}
                                                 @csrf
                                                 @method('DELETE')
-                                                <button type="submit" class="btn btn-sm btn-danger me-2">Delete</button>
+                                                <button type="submit" class="btn btn-sm btn-danger me-2"><i class="bi bi-trash me-2"></i>Delete</button>
                                             </form>
                                         </td>
                                     </tr>
