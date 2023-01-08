@@ -70,6 +70,7 @@
                                 <tr>
                                   <td>Sisa Saldo</td>
                                   <td>@currency($sisaSaldo)</td>
+                                  <tr>@currency($pemasukanBulanIni)</tr>
                                 </tr>
                               </tfoot>
                         </table>
