@@ -136,17 +136,26 @@
 
     {{-- Transaksi Terakhir --}}
     <div class="container py-3 pt-lg-4">
+
         <div class="row">
-            <div class="col-md-12 mb-3">
+            <div class="col-md-9 mb-3">
                 <div class="section-header fw-bold fs-4">
                     Transaksi Terakhir
                 </div>
             </div>
+            {{-- <div class="col-md-3 mb-3">
+                <div class="section-header fw-bold fs-4 text-end">
+                    <div class="input-group">
+                        <input type="text" class="form-control float-right" id="cari"
+                            name="cari" placeholder="Cari">
+                    </div>
+                </div>
+            </div> --}}
         </div>
 
-        <div class="row">
+        <div class="row list-transaksi">
             @foreach ($transaksi as $item)
-                <div class="col-md-12 mb-3">
+                <div class="col-md-12 mb-3 item-transaksi">
                     <div class="card p-lg-3">
                         <div class="card-body d-flex transaksi-list">
                             <div class="image-card me-3">
@@ -182,4 +191,9 @@
         {{-- {{ $transaksi->links() }} --}}
     </div>
     {{-- End Transaksi Terakhir --}}
+
+
 @endsection
+
+
+

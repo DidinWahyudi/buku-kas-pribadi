@@ -44,10 +44,75 @@
     </div>
     {{-- End Filter Rekap --}}
 
+    <div class="container pt-3 pt-lg-4">
+        <div class="row">
+            <div class="col-md-4 mb-3">
+                <a href="{{ route('transaksi') }}">
+                <div class="card card-button p-lg-3">
+                    <div class="card-body d-flex">
+                        <div class="image-card me-3">
+                            <img src="{{ asset('icons/002-e-wallet.png') }}" alt="Image Ilustrasi"
+                                style="width: 50px; height: 50px;">
+                        </div>
+                        <div class="content-card">
+                            <div class="title-card">
+                                Banyaknya Transaksi
+                            </div>
+                            <div class="nominal fw-bold fs-5">
+                               {{  $banyakTransaksi }} Transaksi
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                </a>
+            </div>
+
+            <div class="col-md-4 mb-3">
+                <a href="{{ route('transaksi') }}">
+                    <div class="card card-button p-lg-3">
+                    <div class="card-body d-flex">
+                        <div class="image-card me-3">
+                            <img src="{{ asset('icons/001-payment.png') }}" alt="Image Ilustrasi"
+                                style="width: 50px; height: 50px;">
+                        </div>
+                        <div class="content-card">
+                            <div class="title-card">
+                                Totoal Pengeluaran
+                            </div>
+                            <div class="nominal fw-bold fs-5">
+                                @currency($rekapPengeluaran)
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                </a>
+            </div>
+
+            <div class="col-md-4 mb-3">
+                <a href="{{ route('transaksi') }}">
+                    <div class="card card-button p-lg-3">
+                    <div class="card-body d-flex">
+                        <div class="image-card me-3">
+                            <img src="{{ asset('icons/007-online-payment.png') }}" alt="Image Ilustrasi"
+                                style="width: 50px; height: 50px;">
+                        </div>
+                        <div class="content-card">
+                            <div class="title-card">
+                                Total Pemasukan
+                            </div>
+                            <div class="nominal fw-bold fs-5">
+                                @currency($rekapPemasukan)
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                </a>
+            </div>
+        </div>
+    </div>
+    {{-- End Card Dashboard --}}
 
     {{-- Rekap Transaksi --}}
-
-
     <div class="container py-3 pt-lg-4">
         <div class="row">
             @if ($rekap == null || count($rekap) == 0 && ($dari != null || $sampai != null))

@@ -140,13 +140,18 @@ class TransaksiController extends Controller
      */
     public function rekapTransaksi(Request $request)
     {
+
         $dari = $request->dari;
         $sampai = $request->sampai;
+
+        $title = 'Rekap Transaksi';
 
         $rekapPemasukan = Transaksi::where('jenis_transaksi', '=', 'pemasukan')->where('user_id', Auth::user()->id)->whereBetween('tanggal', [$dari, $sampai])->sum('jumlah');
         $rekapPengeluaran = Transaksi::where('jenis_transaksi', '=', 'pengeluaran')->where('user_id', Auth::user()->id)->whereBetween('tanggal', [$dari, $sampai])->sum('jumlah');
 
+        $banyakTransaksi = Transaksi::whereBetween('tanggal', [$dari, $sampai])->count();
+
         $rekap = Transaksi::whereBetween('tanggal', [$dari, $sampai])->get();
-        return view('rekap', compact('rekap', 'dari', 'sampai', 'rekapPemasukan', 'rekapPengeluaran'));
+        return view('rekap', compact('rekap', 'dari', 'sampai', 'rekapPemasukan', 'rekapPengeluaran', 'banyakTransaksi', 'title'));
     }
 }
